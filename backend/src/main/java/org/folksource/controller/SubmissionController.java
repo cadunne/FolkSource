@@ -17,32 +17,32 @@ import com.opensymphony.xwork2.ModelDriven;
 public class SubmissionController implements ModelDriven<DtoContainer<SubmissionDto>>{
 
 	private DtoContainer<SubmissionDto> content = new DtoContainer<SubmissionDto>(SubmissionDto.class, false);
-	
+
 	private int id;
-	
+
 	@Override
 	public DtoContainer<SubmissionDto> getModel() {
 		return content;
 	}
 
 	public String create() {
-		
+
 		HttpServletResponse res = ServletActionContext.getResponse();
-		
+
 		res.addHeader("Access-Control-Allow-Origin", "*");
 		res.addHeader("Access-Control-Allow-Headers", "Cache-Control");
-		
+
 		SubmissionDto subDto = content.getSingle();
 		Submission s = subDto.toSubmission();
-				
+
 		res.addIntHeader("X-Points", SubmissionService.getSubUser(s).getPoints());
-				
+
 		SubmissionService.save(s);
-		
+
 		// SubmissionService.save updates the submission object with the id that the db has assigned
 		// to the object. We return a new SubmissionDto based on the updated submission object.
 		content.set(new SubmissionDto(s));
-		
+
 		return "create";
 	}
 	

@@ -28,6 +28,26 @@ public class SubmissionDto extends Dto{
 	 * Creates a new SubmissionDto object from the given Submission.
 	 * @param s
 	 */
+
+	//old submissionDto, returns all data instead of only select data meant for mobile devices.
+//	public SubmissionDto(Submission s){
+//		super();
+//		this.id = s.id;
+//		this.task_id = s.task_id;
+//		this.user_id = s.user_id;
+//		this.gps_location = s.gps_location;
+//		this.timestamp = s.timestamp;
+//		this.img_path = s.img_path;
+//		
+//		AnswerDto[] newAnswers = new AnswerDto[s.answers.length]; 
+//		for (int i=0; i < s.answers.length; i++){
+//			newAnswers[i] = new AnswerDto(s.answers[i]);
+//		}
+//		this.answers = newAnswers;
+//	}
+	
+	//returns only select data for mobile devices - e.g. No timestamp
+	//TODO change this when (multiple) timestamps are figured out; potentially send back only "when submitted" timestamp
 	public SubmissionDto(Submission s){
 		super();
 		this.id = s.id;
@@ -43,8 +63,6 @@ public class SubmissionDto extends Dto{
 		}
 		this.answers = newAnswers;
 	}
-
-
 	
 	
 	
