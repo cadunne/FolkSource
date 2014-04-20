@@ -9,7 +9,7 @@ import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
 
-public class LocationDto extends Dto{
+public class LocationDto extends Dto{ //remove this comment
 	public Integer id = 0;
 	public Integer task_id = 0;
 	public String geometryString;
