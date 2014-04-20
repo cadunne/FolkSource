@@ -7,6 +7,7 @@
 		<generator class="native" />
 	</id>
 	<property name="task_id" />
+	<property name="server_timestamp" />
 
 	<joined-subclass name="PolygonLocation" table="location_regions">
 		<key column="id"></key>

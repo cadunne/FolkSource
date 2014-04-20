@@ -55,7 +55,7 @@
 				<!-- <interceptor-ref name="contentParser" /> <interceptor-ref name="concurrentReplayer" 
 					/> --> 
 					<interceptor-ref name="servletConfig" />
-					<interceptor-ref name="authorization" />
+<!--					<interceptor-ref name="authorization" />   -->
 <!-- 						<param name="excludeMethods">create,update,show,index,options</param> -->
 <!-- 					</interceptor-ref> -->
 					<interceptor-ref name="hibernate" /> <!-- <interceptor-ref name="exceptionLog" 

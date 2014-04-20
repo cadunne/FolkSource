@@ -13,7 +13,7 @@ public class PointLocation extends Location {
 	}
 
 	public PointLocation(Integer id, Integer task_id, Geometry read) {
-		super(id, task_id, read);
+		super(id, task_id, read, "2004-10-19 10:23:54"); //TODO: change to current time
 		this.setGeometry((Point) read);
 	}
 	

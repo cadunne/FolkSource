@@ -13,6 +13,7 @@ public class LocationDto extends Dto{
 	public Integer id = 0;
 	public Integer task_id = 0;
 	public String geometryString;
+	public String server_timestamp;
 	private Geometry geometry;
 	
 	public LocationDto()
@@ -24,6 +25,7 @@ public class LocationDto extends Dto{
 		this.id = locIn.id;
 		this.task_id = locIn.task_id;
 		this.geometryString = locIn.getGeometry().toString();
+		this.server_timestamp = locIn.server_timestamp;
 	}
 	
 	public Location toLocation() {
@@ -42,7 +44,7 @@ public class LocationDto extends Dto{
 		} if(this.geometry instanceof Polygon) {
 			return new PolygonLocation(this.id, this.task_id, this.geometry);
 		} else {
-			return new Location(this.id, this.task_id, this.geometry);
+			return new Location(this.id, this.task_id, this.geometry, this.server_timestamp);
 		}
 	}
 	public static Location[] toLocationArray(LocationDto[] ldtos){
